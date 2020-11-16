@@ -8,7 +8,5 @@ RSpec.describe Task, type: :model do
     expect(Task.new).to be_valid
   end
 
-  it "is not valid without a name"
-  it "is not valid without a description"
-  it "is not valid without a completion"
+  it { should have_many(:records).dependent(:destroy) }
 end
